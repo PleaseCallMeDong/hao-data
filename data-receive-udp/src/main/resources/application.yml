@@ -1,0 +1,6 @@
+spring:
+  #激活哪一个环境的配置文件
+  profiles:
+    active: test
+  application:
+    name: data-receive-udp

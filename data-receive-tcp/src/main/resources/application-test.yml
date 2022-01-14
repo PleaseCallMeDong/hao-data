@@ -1,0 +1,6 @@
+tcp:
+  port: 40031
+
+spring:
+  kafka:
+    bootstrap-servers: 10.0.8.50:9092

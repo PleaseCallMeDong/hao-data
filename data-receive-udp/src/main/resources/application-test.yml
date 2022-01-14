@@ -1,0 +1,8 @@
+#server端口
+server:
+  port: 8857
+#udp端口
+udp:
+  port: 8087
+  #本机ip,部署服务器的时候需要填写内网ip
+  serviceIp: 127.0.0.1

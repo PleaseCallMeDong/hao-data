@@ -1,0 +1,21 @@
+#日志
+logging:
+  file:
+    path: log
+
+spring:
+  profiles:
+    active: test
+  application:
+    name: data-receive-tcp
+  output:
+    ansi:
+      enabled: always
+  kafka:
+    producer:
+      retries: 1
+      batchSize: 16384
+      bufferMemory: 134217728
+      keySerializer: org.apache.kafka.common.serialization.StringSerializer
+      valueSerializer: org.apache.kafka.common.serialization.StringSerializer
+      acks: 1
