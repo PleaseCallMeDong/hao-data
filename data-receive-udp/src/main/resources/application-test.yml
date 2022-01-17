@@ -1,6 +1,3 @@
-#server端口
-server:
-  port: 8857
 #udp端口
 udp:
   port: 8087

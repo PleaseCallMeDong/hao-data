@@ -1,12 +1,12 @@
 package com.example.service;
 
 import com.example.bo.SocketBO;
+import com.example.common.util.MyHexUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.integration.ip.udp.UnicastSendingMessageHandler;
-import org.springframework.integration.support.MessageBuilder;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.MessageHeaders;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -23,7 +23,7 @@ public class UdpDecodeService {
 
     public void unpack(SocketBO bo) {
         String in = bo.getIn();
-        log.info("收到UDP: {}", in);
+        //log.info("收到UDP: {}", in);
         this.sendMessage(bo);
     }
 
@@ -38,7 +38,7 @@ public class UdpDecodeService {
         } catch (IOException e) {
             log.error(e.getMessage(), e);
         }
-        log.info("发送UDP: {}", message);
+        //log.info("发送UDP: {}", message);
     }
 
 

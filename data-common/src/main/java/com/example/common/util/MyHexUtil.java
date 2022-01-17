@@ -29,10 +29,10 @@ public class MyHexUtil {
     /**
      * btye转字符串
      */
-    public static String byte2Str(byte[] bytes) {
+    public static String bytes2Hex(byte[] bytes) {
         StringBuilder sb = new StringBuilder();
         for (byte b : bytes) {
-            sb.append(b);
+            sb.append(String.format("%02X", b));
         }
         return sb.toString();
     }
