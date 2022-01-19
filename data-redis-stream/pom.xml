@@ -9,42 +9,39 @@
         <relativePath/>
     </parent>
 
-    <artifactId>data-receive-tcp</artifactId>
+    <artifactId>data-redis-stream</artifactId>
     <version>1.0.1</version>
-    <name>设备数据tcp接收服务</name>
-    <description>设备数据tcp交互</description>
+    <name>设备数据redisStream服务</name>
+    <description>设备数据使用redis实现mq</description>
 
     <properties>
-        <aio-core.version>1.5.13</aio-core.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>org.smartboot.socket</groupId>
-            <artifactId>aio-core</artifactId>
-            <version>${aio-core.version}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>data-common</artifactId>
-            <version>1.0.1</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
-        <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
             </plugin>
         </plugins>
     </build>
